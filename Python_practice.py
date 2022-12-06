@@ -16,8 +16,6 @@ winning_percentage = 0
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
-
-    # Read the header row.
     headers = next(file_reader)
 
     # Print each row in the CSV file.
@@ -30,8 +28,8 @@ with open(file_to_load) as election_data:
             candidate_votes[candidate_name] = 0
         candidate_votes[candidate_name] += 1
 
-    with open(file_to_save, "w")
-         election_results = (
+with open(file_to_save, "w") as txt_file:
+    election_results = (
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
@@ -40,17 +38,18 @@ with open(file_to_load) as election_data:
     # Save the final vote count to the text file.
     txt_file.write(election_results)
 
-        for candidate_name in candidate_votes:
-            votes = candidate_votes[candidate_name]
-            vote_percentage = float(votes) / float(total_votes) * 100
-            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-            txt_file.write(candidate_results)
-            
-            if (votes > winning_count) and (vote_percentage > winning_percentage):
-                winning_count = votes
-                winning_percentage = vote_percentage
-                winning_candidate = candidate_name
-        winning_candidate_summary = (
+    for candidate_name in candidate_votes:
+        votes = candidate_votes[candidate_name]
+        vote_percentage = float(votes) / float(total_votes) * 100
+        candidate_results = (
+            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        txt_file.write(candidate_results)
+
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+            winning_count = votes
+            winning_percentage = vote_percentage
+            winning_candidate = candidate_name
+    winning_candidate_summary = (
         f"-------------------------\n"
         f"Winner: {winning_candidate}\n"
         f"Winning Vote Count: {winning_count:,}\n"
