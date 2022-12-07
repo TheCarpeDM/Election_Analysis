@@ -48,19 +48,25 @@ This script can be used for any state-level election as long as the results are 
 
 To name the text file with the appropriate state's name, you can change line 11 from:
 > file_to_save = os.path.join("Analysis", "election_analysis.txt")
+
 to
-> file_to_save = os.path.join("Analysis", "<state>_election_analysis.txt")
-where <state> is your state's name.
+
+> file_to_save = os.path.join("Analysis", "state_election_analysis.txt")
+where "state" is your state's name.
 
 If your results use different columns for candidates' names and counties, (but are still in csv format), you can change lines 49 and 52 from:
 > candidate_name = row[2]
+
 and
+
 > county_name = row[1]
  
 to
  
-> candidate_name = row[<x>]
-and
-> county_name = row[<y>]
+> candidate_name = row[x]
 
-where <x> is the column index (column number - 1) of the candidates' names and <y> is the column index of the county names.
+and
+
+> county_name = row[y]
+
+where "x" is the column index (column number - 1) of the candidates' names and "y" is the column index of the county names.
