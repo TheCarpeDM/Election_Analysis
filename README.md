@@ -60,7 +60,9 @@ where "state" is your state's name.
 
 If your results use different columns for candidates' names and counties, (but are still in csv format), you can change lines 49 and 52 from:
 > candidate_name = row\[~~2~~]
-> and
+
+and
+
 > county_name = row\[~~1~~]
  
 
@@ -68,7 +70,9 @@ to
 
 
 > candidate_name = row\[x]
-> and
+
+and
+
 > county_name = row\[y]
 
 where "x" is the column index (column number - 1) of the candidates' names and "y" is the column index of the county names.
