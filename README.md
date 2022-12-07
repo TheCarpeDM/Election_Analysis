@@ -13,30 +13,30 @@ This week's task is to help Tom (and Seth) tabulate and audit Colorado's electio
 ### Candidate Results
 
 * **Winner: Diana DeGette**
- * Votes: 272,892
- * Percentage: 73.8%
+				* Votes: 272,892
+				* Percentage: 73.8%
 
 * 2nd Place: Charles Casper Stockham
- * Votes: 85,213
- * Percentage: 23.0%
+				* Votes: 85,213
+				* Percentage: 23.0%
 
 * 3rd Place: Raymon Anthony Doane
- * Votes: 11,606
- * Percentage: 3.1%
+ 			* Votes: 11,606
+			 * Percentage: 3.1%
  
 ### County Results
 
 * **Largest Turnout: Denver**
- * Votes: 306,055
- * Percentage: 82.8%
+ 			* Votes: 306,055
+ 			* Percentage: 82.8%
 
 * 2nd Largest Turnout: Jefferson
- * Votes: 38,855
- * Percentage: 10.5%
+ 			* Votes: 38,855
+ 			* Percentage: 10.5%
 
 * 3rd Largest Turnout: Arapahoe
- * Votes: 24,801
- * Percentage: 6.7%
+ 			* Votes: 24,801
+ 			* Percentage: 6.7%
 
 ## Election Audit Summary
 
@@ -46,13 +46,17 @@ This script can be used for any state-level election as long as the results are 
 
 ### Possible Modifications
 
+#### Name The Output File
 To name the text file with the appropriate state's name, you can change line 11 from:
 > file_to_save = os.path.join("Analysis", "election_analysis.txt")
 
 to
 
 > file_to_save = os.path.join("Analysis", "state_election_analysis.txt")
+
 where "state" is your state's name.
+
+#### Results Use Different Columns
 
 If your results use different columns for candidates' names and counties, (but are still in csv format), you can change lines 49 and 52 from:
 > candidate_name = row[2]
@@ -61,8 +65,10 @@ and
 
 > county_name = row[1]
  
+
 to
  
+
 > candidate_name = row[x]
 
 and
